@@ -33,7 +33,7 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 @Controller
-@RequestMapping("/auth/")
+@RequestMapping("/qaweb/auth/")
 public class LoginController {
 
 	@Autowired

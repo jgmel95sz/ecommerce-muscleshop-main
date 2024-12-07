@@ -35,7 +35,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/usuario")
+@RequestMapping("/qaweb/usuario")
 public class UsuarioController {
 
 	@Autowired

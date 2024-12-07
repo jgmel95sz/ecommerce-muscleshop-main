@@ -12,7 +12,7 @@ import com.muscleshop.web.models.Ubigeo;
 import com.muscleshop.web.services.IUbigeoService;
 
 @Controller
-@RequestMapping("/ubigeo/")
+@RequestMapping("/qaweb/ubigeo/")
 public class UbigeoController {
 	
 	@Autowired
