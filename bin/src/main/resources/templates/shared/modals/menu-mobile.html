@@ -1,0 +1,95 @@
+<div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" th:fragment="menu-mobile">
+    <span class="icon-close icon-close-popup" data-bs-dismiss="offcanvas" aria-label="Close"></span>
+    <div class="mb-canvas-content">
+        <div class="mb-body">
+            <ul class="nav-ul-mb" id="wrapper-menu-navigation">
+                <li class="nav-mb-item"
+                    th:each="menu : ${menusHeader}" th:if="${menu.id != 1 and menu.id != 6 and menu.id != 13}">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a th:href="@{'/'+${menu.url}}"
+                           th:text="${menu.nombre}">
+                            Products
+                        </a>
+                        <a class="collapsed mb-menu-link current"
+                           data-bs-toggle="collapse"
+                           aria-expanded="true"
+                           th:aria-controls="'dropdown-menu-three-'+${menu.id}"
+                           th:href="'#dropdown-menu-three-'+${menu.id}"
+                           th:if="${menu.menuSubs != null and menu.menuSubs.size() > 0}">
+                            <span class="btn-open-sub"></span>
+                        </a>
+                    </div>
+                    <div class="collapse"
+                         th:id="'dropdown-menu-three-'+${menu.id}"
+                         th:if="${menu.menuSubs != null and menu.menuSubs.size() > 0}">
+                        <ul class="sub-nav-menu" id="sub-menu-navigation">
+                            <li th:each="submenu : ${menu.menuSubs}">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a th:href="@{'/'+${menu.url}+'/'+${submenu.url}}"
+                                       th:text="${submenu.nombre}">
+                                        Products
+                                    </a>
+                                    <a class="sub-nav-link collapsed"
+                                       data-bs-toggle="collapse"
+                                       aria-expanded="true"
+                                       th:href="'#sub-product-one-'+${submenu.id}"
+                                       th:aria-controls="'sub-product-one-'+${submenu.id}">
+                                        <span class="btn-open-sub"></span>
+                                    </a>
+                                </div>
+                                <div class="collapse"
+                                     th:id="'sub-product-one-'+${submenu.id}"
+                                     th:if="${submenu.productoCategorias != null and submenu.productoCategorias.size() > 0}">
+                                    <ul class="sub-nav-menu sub-menu-level-2">
+                                        <li th:each="productoCategorias : ${submenu.productoCategorias}">
+                                            <a class="sub-nav-link"
+                                               th:href="@{'/'+${menu.url}+'/'+${submenu.url}+'/'+${productoCategorias.url}}"
+                                               th:text="${productoCategorias.nombre}">
+                                                Product default
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="mb-other-content d-none">
+                <div class="d-flex group-icon">
+                    <a href="wishlist.html" class="site-nav-icon"><i class="icon icon-heart"></i>Wishlist</a>
+                    <a href="home-search.html" class="site-nav-icon"><i class="icon icon-search"></i>Search</a>
+                </div>
+                <div class="mb-notice">
+                    <a href="contact-1.html" class="text-need">Need help ?</a>
+                </div>
+                <ul class="mb-info">
+                    <li>Address: 1234 Fashion Street, Suite 567, <br> New York, NY 10001</li>
+                    <li>Email: <b>info@fashionshop.com</b></li>
+                    <li>Phone: <b>(212) 555-1234</b></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-bottom">
+            <a href="#login" data-bs-toggle="modal" class="site-nav-icon"><i class="icon icon-account"></i>Login</a>
+            <div class="bottom-bar-language d-none">
+                <div class="tf-currencies">
+                    <select class="image-select center style-default type-currencies">
+                        <option data-thumbnail="https://themesflat.co/html/ecomus/images/country/fr.svg">EUR <span>€ | France</span></option>
+                        <option data-thumbnail="https://themesflat.co/html/ecomus/images/country/de.svg">EUR <span>€ | Germany</span></option>
+                        <option selected data-thumbnail="https://themesflat.co/html/ecomus/images/country/us.svg">USD <span>$ | United States</span></option>
+                        <option data-thumbnail="https://themesflat.co/html/ecomus/images/country/vn.svg">VND <span>₫ | Vietnam</span></option>
+                    </select>
+                </div>
+                <div class="tf-languages">
+                    <select class="image-select center style-default type-languages">
+                        <option>English</option>
+                        <option>العربية</option>
+                        <option>简体中文</option>
+                        <option>اردو</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

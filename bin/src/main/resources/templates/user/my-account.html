@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>Bienvendidos a MuscleShop</title>
+
+	<meta name="author" content="Muscle">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- font -->
+	<link rel="stylesheet" th:href="@{/public/resources/site/general/static/assets/fonts/fonts.css}">
+	<!-- Icons -->
+	<link rel="stylesheet" th:href="@{/public/resources/site/general/static/assets/fonts/font-icons.css}">
+	<link rel="stylesheet" th:href="@{/public/resources/site/general/static/assets/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/public/resources/site/general/static/assets/css/swiper-bundle.min.css}">
+	<link rel="stylesheet" th:href="@{/public/resources/site/general/static/assets/css/animate.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/public/resources/site/general/static/assets/css/styles.css}"/>
+
+	<!-- Favicon and Touch Icons  -->
+	<link rel="shortcut icon" th:href="@{/public/resources/site/general/static/images/logo/favicon.png}">
+	<link rel="apple-touch-icon-precomposed" th:href="@{/public/resources/site/general/static/images/logo/favicon.png}">
+	<script src="https://kit.fontawesome.com/98270ba09b.js" crossorigin="anonymous"></script>
+</head>
+<body class="preload-wrapper">
+	<div id="wrapper">
+		<!-- Top bar -->
+		<div th:replace="~{shared/components/top-bar :: top-bar}"></div>
+		<!-- /Top bar -->
+		<!-- Header -->
+		<div th:replace="~{shared/components/header :: header}"></div>
+		<!-- /Header -->
+
+		<!-- page-title -->
+		<div class="tf-page-title">
+			<div class="container-full">
+				<div class="heading text-center">Mi Cuenta</div>
+			</div>
+		</div>
+		<!-- /page-title -->
+
+		<!-- page-cart -->
+		<section class="flat-spacing-11">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						<ul class="my-account-nav">
+							<li><span class="my-account-nav-item active">Dashboard</span></li>
+							<li><a class="my-account-nav-item">Órdenes</a></li>
+							<li><a class="my-account-nav-item">Dirección</a></li>
+							<li><a class="my-account-nav-item">Detalles de la cuenta</a></li>
+							<li>
+								<a class="my-account-nav-item">
+									<form th:action="@{/logout}" method="post">
+										<button type="submit" class="bg-transparent border-0 fw-5">Cerrar Sesión</button>
+									</form>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+					<div class="col-lg-9">
+						<div class="my-account-content account-dashboard">
+							<div class="mb_60">
+								<h5 class="fw-5 mb_20">Hola Themesflat</h5>
+								<p>
+									Desde el panel de control de su cuenta puede ver sus <a class="text_primary" href="my-account-orders.html">pedidos recientes</a>, administrar su <a class="text_primary" href="my-account-address.html">dirección de envío y facturación</a>, y <a class="text_primary" href="my-account-edit.html">editar su contraseña y los detalles de su cuenta.</a>.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- page-cart -->
+
+		<!-- Footer -->
+		<div th:replace="~{shared/components/footer :: footer}"></div>
+		<!-- /Footer -->
+
+	</div>
+
+	<!-- gotop: Componente que hace dirigirte a lo más alto de la página web-->
+	<div th:replace="~{shared/components/gotop :: gotop}"></div>
+	<!-- /gotop -->
+
+	<!-- toolbar-bottom: Componente inferior cuando es mobile similar a un toolbar-->
+	<div th:replace="~{shared/components/toolbar-bottom :: toolbar-bottom}"></div>
+	<!-- /toolbar-bottom -->
+
+	<!-- all-modals: Todos los modales -->
+	<div th:replace="~{shared/modals/all-modals :: all-modals}"></div>
+	<!-- /all-modals -->
+
+	<!-- Javascript -->
+	<script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/swiper-bundle.min.js}"></script>
+	<script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/carousel.js}"></script>
+	<script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/bootstrap-select.min.js}"></script>
+	<script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/lazysize.min.js}"></script>
+	<script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/count-down.js}"></script>
+	<script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/wow.min.js}"></script>
+	<script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/multiple-modal.js}"></script>
+	<script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/main.js}"></script>
+	<script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/carrito.js}"></script>
+	<script th:inline="javascript">
+		let dataUsuario = [[${session.usuario}]]
+		let selectedVariants = [];
+		let producto = "";
+		let variacionesParams;
+		let urlImagenesProductos='http://104.218.48.244:8080/apirest/api/productos/images-propiedad-detalle/';
+	</script>
+</body>
+
+
+</html>
+<!--
+<div class="page-wrapper">
+	<main class="main">
+		<div class="container perfil-container my-5 pt-5 px-5">
+			<h2 class="text-center">Perfil de Usuario</h2>
+			<hr class="large-divider my-3">
+
+			<div class="container pb-5">
+				<div class="row">
+					<div class="col-md-4 mb-3">
+						<label for="login-email">Nombres</label>
+						<input type="text" class="form-input form-wide" id="login-email" disabled
+							th:placeholder="${session.usuarioPerfil.nombres}" />
+					</div>
+
+					<div class="col-md-4 mb-3">
+						<label for="login-password3">Apellidos</label>
+						<input type="text" class="form-input form-wide" id="login-password37" disabled
+							th:placeholder="${session.usuarioPerfil.apellidos}" />
+					</div>
+
+					<div class="col-md-4 mb-3">
+						<label for="login-password3">Teléfono</label>
+						<input type="text" class="form-input form-wide" id="login-password7" disabled
+							th:placeholder="${session.usuarioPerfil.telefono}" />
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<label for="login-password3">Correo electrónico</label>
+						<input type="text" class="form-input form-wide" id="login-password3" disabled
+							th:placeholder="${session.usuarioPerfil.usuario.correo}" />
+					</div>
+					<div class="col-md-6 mb-3">
+						<label for="login-password4">Rol Perfil</label>
+						<input type="text" class="form-input form-wide" id="login-password4" disabled
+							th:placeholder="${session.usuarioPerfil.usuario.rolPerfil.nombre}" />
+					</div>
+				</div>
+
+				<div class="row pt-5 justify-content-center">
+					<div class="col-md-6 text-center">
+						<form th:action="@{/logout}" method="post" class="d-inline-block mb-3 mr-md-3">
+							<button type="submit" class="btn btn-dark btn-md">Cerrar Sesión</button>
+						</form>
+
+						<button type="button" class="btn btn-success btn-md d-inline-block" data-toggle="modal"
+							data-target="#exampleModal">
+							Editar </button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</div>
+
+
+
+
+<div class="modal fade modal-editar-perfil" id="exampleModal" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Editar información del Perfil</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body pb-5 mb-3">
+				<form th:action="@{/templates/user/mi-cuenta/editar-perfil}" th:object="${usuarioPerfil}"
+					  method="post">
+					<input type="hidden" th:field="*{id}" />
+					<div class="form-group">
+						<label for="nombres">Nombres</label>
+						<input type="text" class="form-control" id="nombres" th:field="*{nombres}" />
+					</div>
+					<div class="form-group">
+						<label for="apellidos">Apellidos</label>
+						<input type="text" class="form-control" id="apellidos" th:field="*{apellidos}" />
+					</div>
+					<div class="form-group">
+						<label for="telefono">Teléfono</label>
+						<input type="text" class="form-control" id="telefono" th:field="*{telefono}" />
+					</div>
+					<button type="submit" class="btn btn-primary mt-2 guardar">Guardar información</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>-->
+

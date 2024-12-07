@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Bienvendidos a MuscleShop</title>
+
+    <meta name="author" content="Muscle">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- font -->
+    <link rel="stylesheet" th:href="@{/public/resources/site/general/static/assets/fonts/fonts.css}">
+    <!-- Icons -->
+    <link rel="stylesheet" th:href="@{/public/resources/site/general/static/assets/fonts/font-icons.css}">
+    <link rel="stylesheet" th:href="@{/public/resources/site/general/static/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/public/resources/site/general/static/assets/css/swiper-bundle.min.css}">
+    <link rel="stylesheet" th:href="@{/public/resources/site/general/static/assets/css/animate.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/public/resources/site/general/static/assets/css/styles.css}"/>
+
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" th:href="@{/public/resources/site/general/static/images/logo/favicon.png}">
+    <link rel="apple-touch-icon-precomposed" th:href="@{/public/resources/site/general/static/images/logo/favicon.png}">
+    <script src="https://kit.fontawesome.com/98270ba09b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="preload-wrapper">
+
+    <!-- preload -->
+    <div class="preload preload-container">
+        <div class="preload-logo">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- /preload -->
+
+    <div id="wrapper">
+
+        <!-- Top bar -->
+        <div th:replace="~{shared/components/top-bar :: top-bar}"></div>
+        <!-- /Top bar -->
+
+        <!-- Header -->
+        <div th:replace="~{shared/components/header :: header}"></div>
+        <!-- /Header -->
+
+        <!-- Slider -->
+        <div th:replace="~{shared/components/slider :: slider}"></div>
+        <!-- /Slider -->
+
+        <!-- Categories flat-spacing-10 -->
+        <section class="flat-spacing-1 flat-categorie">
+            <div class="container">
+                <div class="flat-title-v2">
+                    <div class="box-sw-navigation">
+                        <div class="nav-sw nav-next-slider nav-next-collection"><span class="icon icon-arrow-left"></span></div>
+                        <div class="nav-sw nav-prev-slider nav-prev-collection"><span class="icon icon-arrow-right"></span></div>
+                    </div>
+                    <span class="text-3 fw-7 text-uppercase title wow fadeInUp" data-wow-delay="0s">¿CUÁL ES TU OBJETIVO?</span>
+                </div>
+                <div class="row">
+                    <div class="col-xl-9 col-lg-8 col-md-8">
+                        <div class="swiper tf-sw-collection" data-preview="3" data-tablet="2" data-mobile="2" data-space-lg="20" data-space-md="20" data-space="15" data-loop="false" data-auto-play="false">
+                            <div class="swiper-wrapper">
+                                <!--http://104.218.48.244:8080/apirest/api/menuSub/images/-->
+                                <div class="swiper-slide" lazy="true" th:each=" menuSub: ${subMenus}">
+                                    <div class="collection-item style-left hover-img">
+                                        <div class="collection-inner">
+                                            <a th:href="@{'/por-objetivos/'+${menuSub.urlMenuSub}}" class="collection-image img-style">
+                                                <!-- th:data-src="@{/images/collections/phonecase-1.jpg}" -->
+                                                <img class="lazyload"
+                                                     th:data-scr="'http://104.218.48.244:8080/apirest/api/menuSub/images/'+${menuSub.imagenMenuSub}"
+                                                     th:src="'http://104.218.48.244:8080/apirest/api/menuSub/images/'+${menuSub.imagenMenuSub}"
+                                                     th:alt="'img-'+${menuSub.nombreMenuSub}">
+                                            </a>
+                                            <div class="collection-content">
+                                                <a th:href="@{'/por-objetivos/'+${menuSub.urlMenuSub}}" class="tf-btn collection-title hover-icon fs-15">
+                                                    <span th:text="${menuSub.nombreMenuSub}">Phone Cases</span><i class="icon icon-arrow1-top-left"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-4">
+                        <div class="discovery-new-item">
+                            <h5>Descubre todos tus objetivos</h5>
+                            <a><i class="icon-arrow1-top-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Categories -->
+
+        <!-- Shop Collection -->
+        <section class="flat-spacing-1 pt_0">
+            <div class="container">
+                <div class="tf-grid-layout bg_blue-5 gap-0 rounded-0 md-col-2 tf-img-with-text style-3">
+                    <div class="tf-content-wrap">
+                        <div>
+                            <h2 class="heading wow fadeInUp text-center" data-wow-delay="0s">
+                                LA PROTEÍNA DE MÁS ALTA CALIDAD DEL MERCADO
+                            </h2>
+                            <p class="description text_black-2 wow fadeInUp" style="text-align: justify" data-wow-delay="0s">
+                                ISO-XP es un suplemento rico en proteínas con edulcorante y, con diferencia, el aislado de proteína de suero más limpio y de mayor calidad disponible, con 23,4 gr. Proteína por ración de 25 g. ISO-XP no tiene soja añadida y utiliza lecitina de girasol como emulsionante.
+                                <br>
+                                ISO-XP es ideal para cualquiera que busque aumentar la ingesta diaria de proteínas sin ayuno, cabrohidratos ni azúcares adicionales. ISO-XP debe mezclarse con agua o leche desnatada para una fácil mezcla y un excelente sabor.
+                            </p>
+                            <!--<a href="shop-collection-list.html" class="tf-btn btn-outline-dark radius-3 link justify-content-center wow fadeInUp" data-wow-delay="0s">Shop Collection</a>-->
+                        </div>
+                    </div>
+                    <div class="tf-image-wrap">
+                        <!--@{/images/collections/phonecase-4.jpg}-->
+                        <img class="lazyload"
+                             data-src="https://res.cloudinary.com/ddtmkkhi4/image/upload/v1732830278/Productos_Favs_rtpoj2.jpg"
+                             src="https://res.cloudinary.com/ddtmkkhi4/image/upload/v1732830278/Productos_Favs_rtpoj2.jpg" alt="collection-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Shop Collection -->
+
+        <!-- Trending Now -->
+        <section class="flat-spacing-1 pt_0">
+            <div class="container">
+                <div class="flat-title">
+                    <span class="title wow fadeInUp" data-wow-delay="0s">BEST SELLERS</span>
+                </div>
+                <div class="wrap-carousel wrap-sw-2">
+                    <div class="swiper tf-sw-product-sell-1 wrap-sw-over"
+                         data-preview="4"
+                         data-tablet="3"
+                         data-mobile="2"
+                         data-space-lg="30"
+                         data-space-md="15"
+                         data-pagination="2"
+                         data-pagination-md="3"
+                         data-pagination-lg="3">
+                        <div class="swiper-wrapper" id="contenedor-productos-bestsellers">
+                            <!--<div class="swiper-slide" lazy="true" th:each="producto : ${productos}">
+                                <div class="card-product bg_white radius-20">
+                                    <div class="card-product-wrapper border-line">
+                                        <a th:href="@{/index/product-detail}" class="product-img">
+                                            &lt;!&ndash;th:src="@{/images/products/phonecase-11.jpg}"&ndash;&gt;
+                                            <img class="lazyload img-product"
+                                                 th:src="'http://104.218.48.244:8080/apirest/api/productos/images/'+${producto.imagen}"
+                                                 th:data-src="'http://104.218.48.244:8080/apirest/api/productos/images/'+${producto.imagen}"
+                                                 th:alt="${producto.nombre} + '-' + ${producto.variacion}">
+                                            <img class="lazyload img-hover"
+                                                 th:src="'http://104.218.48.244:8080/apirest/api/productos/images/'+${producto.imagen}"
+                                                 th:data-src="'http://104.218.48.244:8080/apirest/api/productos/images/'+${producto.imagen}"
+                                                 th:alt="${producto.nombre} + '-' + ${producto.variacion}">
+                                        </a>
+                                        <div class="list-product-btn absolute-2">
+                                            <a href="#quick_add" data-bs-toggle="modal" class="box-icon bg_white quick-add tf-btn-loading">
+                                                <span class="icon icon-bag"></span>
+                                                <span class="tooltip">Quick Add</span>
+                                            </a>
+                                            <a href="javascript:void(0);" class="box-icon bg_white wishlist btn-icon-action">
+                                                <span class="icon icon-heart"></span>
+                                                <span class="tooltip">Add to Wishlist</span>
+                                                <span class="icon icon-delete"></span>
+                                            </a>
+                                            &lt;!&ndash;<a href="#compare" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft" class="box-icon bg_white compare btn-icon-action">
+                                                <span class="icon icon-compare"></span>
+                                                <span class="tooltip">Add to Compare</span>
+                                                <span class="icon icon-check"></span>
+                                            </a>&ndash;&gt;
+                                            <a class="box-icon bg_white compare btn-icon-action btn-add-cart">
+                                                <span class="icon icon-compare"></span>
+                                                <span class="tooltip">Add to Compare</span>
+                                                <span class="icon icon-check"></span>
+                                            </a>
+                                            <a href="#quick_view" data-bs-toggle="modal" class="box-icon bg_white quickview tf-btn-loading">
+                                                <span class="icon icon-view"></span>
+                                                <span class="tooltip">Quick View</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-product-info">
+                                        <a href="product-detail.html"
+                                           class="title link text-center" th:text="${producto.nombre}">Trouble - iPhone Case</a>
+                                        <a href="product-detail.html"
+                                           class="title link text-center"
+                                           th:each="variacion: ${producto.variaciones}"
+                                           th:text="${variacion}">Trouble - iPhone Case</a>
+                                        <div class="d-flex flex-row justify-content-evenly">
+                                            <p class="d-flex flex-column">
+                                                Precio Regular:
+                                                <span class="price"
+                                                      th:text="'S/. ' + ${#numbers.formatDecimal(producto.precio,3,2,'POINT')}">
+                                                    $30.00
+                                                </span>
+                                            </p>
+                                            <p class="d-flex flex-column">
+                                                Precio Reducido:
+                                                <span class="price"
+                                                      th:text="'S/. ' + ${#numbers.formatDecimal(producto.precioReducido,3,2,'POINT')}">
+                                                    $30.00
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="nav-sw nav-next-slider nav-next-sell-1 box-icon w_46 round"><span class="icon icon-arrow-left"></span></div>
+                    <div class="nav-sw nav-prev-slider nav-prev-sell-1 box-icon w_46 round"><span class="icon icon-arrow-right"></span></div>
+                    <div class="sw-dots style-2 sw-pagination-sell-1 justify-content-center"></div>
+                </div>
+            </div>
+        </section>
+        <!-- /Trending Now -->
+
+        <!-- Shop Collection mb_40-->
+        <section class="flat-spacing-1 pt_0">
+            <div class="container">
+                <div class="tf-grid-layout md-col-2 bg_yellow-5 tf-img-with-text style-5 style-6">
+                    <div class="tf-image-wrap wow fadeInUp" data-wow-delay="0s">
+                        <!--th:src="@{/images/collections/phonecase-9.jpg}"-->
+                        <img class="lazyload"
+                             src="https://themesflat.co/html/ecomus/images/collections/phonecase-9.jpg"
+                             dat-src="https://themesflat.co/html/ecomus/images/collections/phonecase-9.jpg"
+                             alt="collection-img">
+                    </div>
+                    <div class="tf-content-wrap wow fadeInUp" data-wow-delay="0s">
+                        <div class="heading">Colección <br> Clásica</div>
+                        <p class="description text_black-2">Fundas ultraprotectoras diseñadas para tu comportamiento más audaz. Protección de doble capa y borde frontal elevado de 3 mm.</p>
+                        <a class="tf-btn btn-outline-dark radius-3 link justify-content-center wow fadeInUp" data-wow-delay="0s">Colección de tienda</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Shop Collection -->
+
+        <!-- Testimonial flat-spacing-5 pt_0 -->
+        <section class="flat-spacing-1 pt_0 flat-testimonial">
+            <div class="container">
+                <div class="flat-title wow fadeInUp" data-wow-delay="0s">
+                    <span class="title">LO QUE DICEN DE NUESTROS PRODUCTOS</span>
+                    <!--<p class="sub-title">Hear what they say about us</p>-->
+                </div>
+                <div class="wrap-carousel">
+                    <div class="swiper tf-sw-testimonial" data-preview="3" data-tablet="2" data-mobile="1" data-space-lg="30" data-space-md="15">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" th:each="pedidoProductoComentario: ${pedidoProductoComentarios}">
+                                <div class="testimonial-item style-column wow fadeInUp" data-wow-delay="0s">
+                                    <div class="rating">
+                                        <i class="icon-start"></i>
+                                        <i class="icon-start"></i>
+                                        <i class="icon-start"></i>
+                                        <i class="icon-start"></i>
+                                        <i class="icon-start"></i>
+                                    </div>
+                                    <div class="heading" th:text="${pedidoProductoComentario.comentario}">Best Online Fashion Site</div>
+                                    <div class="text">
+                                        “ Siempre encuentro algo elegante y asequible en este sitio web de moda ”
+                                    </div>
+                                    <div class="author">
+                                        <div class="name" th:text="${pedidoProductoComentario.pedidoProducto.pedido.usuario.usuarioPerfil.nombres} + ' ' + ${pedidoProductoComentario.pedidoProducto.pedido.usuario.usuarioPerfil.apellidos}">
+                                            Robert smith
+                                        </div>
+                                        <div class="metas">Nuevo Cliente</div>
+                                    </div>
+                                    <div class="product">
+                                        <div class="image">
+                                            <a>
+                                                <img class="lazyload"
+                                                     th:src="'http://104.218.48.244:8080/apirest/api/productos/images/'+${pedidoProductoComentario.pedidoProducto.producto.imagen}"
+                                                     th:data-src="'http://104.218.48.244:8080/apirest/api/productos/images/'+${pedidoProductoComentario.pedidoProducto.producto.imagen}"
+                                                     th:alt="'img-'+${pedidoProductoComentario.pedidoProducto.producto.nombre}">
+                                            </a>
+                                        </div>
+                                        <div class="content-wrap">
+                                            <div class="product-title">
+                                                <a th:text="${pedidoProductoComentario.pedidoProducto.producto.nombre}">
+                                                    Jersey thong body
+                                                </a>
+                                            </div>
+                                            <!--<div class="price">$105.95</div>-->
+                                        </div>
+                                        <!--<a><i class="icon-arrow1-top-left"></i></a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-sw nav-next-slider nav-next-testimonial lg"><span class="icon icon-arrow-left"></span></div>
+                    <div class="nav-sw nav-prev-slider nav-prev-testimonial lg"><span class="icon icon-arrow-right"></span></div>
+                    <div class="sw-dots style-2 sw-pagination-testimonial justify-content-center"></div>
+                </div>
+            </div>
+        </section>
+        <!-- /Testimonial -->
+
+        <!-- Icon box flat-spacing-11 pb_0-->
+        <section class="flat-spacing-1 pt_0 flat-iconbox wow fadeInUp" data-wow-delay="0s">
+            <div class="container">
+                <div class="wrap-carousel wrap-mobile">
+                    <div class="swiper tf-sw-mobile" data-preview="1" data-space="15">
+                        <div class="swiper-wrapper wrap-iconbox">
+                            <div class="swiper-slide">
+                                <div class="tf-icon-box style-border-line text-center">
+                                    <div class="icon">
+                                        <i class="icon-shipping"></i>
+                                    </div>
+                                    <div class="content">
+                                        <div class="title">Envío gratis</div>
+                                        <p>Envío gratis por compras mayores a S/ 150</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="tf-icon-box style-border-line text-center">
+                                    <div class="icon">
+                                        <i class="icon-payment fs-22"></i>
+                                    </div>
+                                    <div class="content">
+                                        <div class="title">Múltiples métodos de pago</div>
+                                        <p>Paga con diferentes tarjetas</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="tf-icon-box style-border-line text-center">
+                                    <div class="icon">
+                                        <i class="icon-return fs-22"></i>
+                                    </div>
+                                    <div class="content">
+                                        <div class="title">Hasta 3 cuotas sin intereses</div>
+                                        <p>Con tu tarjeta Diners, BBVA, BCP</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="tf-icon-box style-border-line text-center">
+                                    <div class="icon">
+                                        <i class="icon-suport"></i>
+                                    </div>
+                                    <div class="content">
+                                        <div class="title">Loyalty Program</div>
+                                        <p>Sistema de puntos para recompensas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="sw-dots style-2 sw-pagination-mb justify-content-center"></div>
+                </div>
+            </div>
+        </section>
+        <!-- /Icon box -->
+
+        <!-- Store flat-spacing-1 pb_0-->
+        <section class="flat-spacing-1 pt_0">
+            <div class="container">
+                <div class="flat-title" >
+                    <span class="title wow fadeInUp" data-wow-delay="0s">CONOCE NUESTRAS MARCAS</span>
+                </div>
+                <div class="flat-tab-store flat-animate-tab">
+                    <ul class="widget-tab-2" role="tablist">
+                        <li class="nav-tab-item" role="presentation">
+                            <a href="#abe" class="active" data-bs-toggle="tab">ABE</a>
+                        </li>
+                        <li class="nav-tab-item" role="presentation">
+                            <a href="#applied-nutrition"  data-bs-toggle="tab">Applied Nutrition</a>
+                        </li>
+                        <li class="nav-tab-item" role="presentation">
+                            <a href="#bioTechUSA" data-bs-toggle="tab">BioTechUSA</a>
+                        </li>
+                        <li class="nav-tab-item" role="presentation">
+                            <a href="#beauty-glow" data-bs-toggle="tab">Beauty Glow</a>
+                        </li>
+                        <li class="nav-tab-item" role="presentation">
+                            <a href="#kevin-levrone" data-bs-toggle="tab">Kevin Levrone</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active show" id="abe" role="tabpanel">
+                            <div class="widget-card-store align-items-center tf-grid-layout md-col-2">
+                                <div class="store-item-info">
+                                    <h5 class="store-heading text-center">#APPLYOURSELF</h5>
+                                    <div class="description">
+                                        <!--<p>301 Front St WToronto,<br>Ecomus@support.com <br>(08) 8942 1299</p>-->
+                                        <p style="text-align: justify">
+                                            En un rincón del bosque, entre los susurros del viento y las sombras de los árboles, se alzaba una pequeña cabaña de madera. Era el hogar de un viejo sabio que, según contaban las leyendas, poseía el don de hablar con los animales y de descifrar los secretos del universo. Cada amanecer, mientras la bruma se levantaba de los ríos y el canto de los pájaros resonaba, el sabio salía a recoger plantas y frutos que solo él conocía.
+
+                                            Las gentes del pueblo cercano se acercaban de vez en cuando, en busca de consejos y remedios para el cuerpo y el alma. Él los recibía con una sonrisa serena, escuchaba sus historias y, tras un breve silencio, les ofrecía respuestas enigmáticas que cada uno interpretaba a su manera. Para algunos, era solo un excéntrico ermitaño; para otros, un guardián de la sabiduría ancestral
+                                        </p>
+                                    </div>
+                                </div>
+                                <!--th:data-src="@{/images/shop/store/ourstore1.png}"-->
+                                <div class="store-img">
+                                    <img class="lazyload"
+                                         src="https://res.cloudinary.com/ddtmkkhi4/image/upload/v1728521807/ABE_i4stkj.jpg"
+                                         data-src="https://res.cloudinary.com/ddtmkkhi4/image/upload/v1728521807/ABE_i4stkj.jpg" alt="store-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="applied-nutrition" role="tabpanel">
+                            <div class="widget-card-store align-items-center tf-grid-layout md-col-2">
+                                <div class="store-item-info">
+                                    <h5 class="store-heading text-center">#APPLYOURSELF</h5>
+                                    <div class="description">
+                                        <!--<p>301 Front St WToronto,<br>Ecomus@support.com <br>(08) 8942 1299</p>-->
+                                        <p style="text-align: justify">
+                                            En un rincón del bosque, entre los susurros del viento y las sombras de los árboles, se alzaba una pequeña cabaña de madera. Era el hogar de un viejo sabio que, según contaban las leyendas, poseía el don de hablar con los animales y de descifrar los secretos del universo. Cada amanecer, mientras la bruma se levantaba de los ríos y el canto de los pájaros resonaba, el sabio salía a recoger plantas y frutos que solo él conocía.
+
+                                            Las gentes del pueblo cercano se acercaban de vez en cuando, en busca de consejos y remedios para el cuerpo y el alma. Él los recibía con una sonrisa serena, escuchaba sus historias y, tras un breve silencio, les ofrecía respuestas enigmáticas que cada uno interpretaba a su manera. Para algunos, era solo un excéntrico ermitaño; para otros, un guardián de la sabiduría ancestral                                        </p>
+                                    </div>
+                                </div>
+                                <div class="store-img">
+                                    <img class="lazyload"
+                                         src="https://res.cloudinary.com/ddtmkkhi4/image/upload/v1728521452/Applied_Logo-01_vvdqtv.png"
+                                         data-src="https://res.cloudinary.com/ddtmkkhi4/image/upload/v1728521452/Applied_Logo-01_vvdqtv.png" alt="store-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="bioTechUSA" role="tabpanel">
+                            <div class="widget-card-store align-items-center tf-grid-layout md-col-2">
+                                <div class="store-item-info">
+                                    <h5 class="store-heading text-center">#APPLYOURSELF</h5>
+                                    <div class="description">
+                                        <!--<p>301 Front St WToronto,<br>Ecomus@support.com <br>(08) 8942 1299</p>-->
+                                        <p style="text-align: justify">
+                                            En un rincón del bosque, entre los susurros del viento y las sombras de los árboles, se alzaba una pequeña cabaña de madera. Era el hogar de un viejo sabio que, según contaban las leyendas, poseía el don de hablar con los animales y de descifrar los secretos del universo. Cada amanecer, mientras la bruma se levantaba de los ríos y el canto de los pájaros resonaba, el sabio salía a recoger plantas y frutos que solo él conocía.
+
+                                            Las gentes del pueblo cercano se acercaban de vez en cuando, en busca de consejos y remedios para el cuerpo y el alma. Él los recibía con una sonrisa serena, escuchaba sus historias y, tras un breve silencio, les ofrecía respuestas enigmáticas que cada uno interpretaba a su manera. Para algunos, era solo un excéntrico ermitaño; para otros, un guardián de la sabiduría ancestral                                        </p>
+                                    </div>
+                                </div>
+                                <div class="store-img">
+                                    <img class="lazyload"
+                                         src="https://res.cloudinary.com/ddtmkkhi4/image/upload/v1728521845/KV_Silverline_2_oluxyw.png"
+                                         data-src="https://res.cloudinary.com/ddtmkkhi4/image/upload/v1728521845/KV_Silverline_2_oluxyw.png" alt="store-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="beauty-glow" role="tabpanel">
+                            <div class="widget-card-store align-items-center tf-grid-layout md-col-2">
+                                <div class="store-item-info">
+                                    <h5 class="store-heading text-center">#APPLYOURSELF</h5>
+                                    <div class="description">
+                                        <!--<p>301 Front St WToronto,<br>Ecomus@support.com <br>(08) 8942 1299</p>-->
+                                        <p style="text-align: justify">
+                                            En un rincón del bosque, entre los susurros del viento y las sombras de los árboles, se alzaba una pequeña cabaña de madera. Era el hogar de un viejo sabio que, según contaban las leyendas, poseía el don de hablar con los animales y de descifrar los secretos del universo. Cada amanecer, mientras la bruma se levantaba de los ríos y el canto de los pájaros resonaba, el sabio salía a recoger plantas y frutos que solo él conocía.
+
+                                            Las gentes del pueblo cercano se acercaban de vez en cuando, en busca de consejos y remedios para el cuerpo y el alma. Él los recibía con una sonrisa serena, escuchaba sus historias y, tras un breve silencio, les ofrecía respuestas enigmáticas que cada uno interpretaba a su manera. Para algunos, era solo un excéntrico ermitaño; para otros, un guardián de la sabiduría ancestral                                        </p>
+                                    </div>
+                                </div>
+                                <div class="store-img">
+                                    <img class="lazyload"
+                                         src="https://themesflat.co/html/ecomus/images/shop/store/ourstore3.png"
+                                         data-src="https://themesflat.co/html/ecomus/images/shop/store/ourstore3.png" alt="store-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="kevin-levrone" role="tabpanel">
+                            <div class="widget-card-store align-items-center tf-grid-layout md-col-2">
+                                <div class="store-item-info">
+                                    <h5 class="store-heading text-center">#APPLYOURSELF</h5>
+                                    <div class="description">
+                                        <!--<p>301 Front St WToronto,<br>Ecomus@support.com <br>(08) 8942 1299</p>-->
+                                        <p style="text-align: justify">
+                                            En un rincón del bosque, entre los susurros del viento y las sombras de los árboles, se alzaba una pequeña cabaña de madera. Era el hogar de un viejo sabio que, según contaban las leyendas, poseía el don de hablar con los animales y de descifrar los secretos del universo. Cada amanecer, mientras la bruma se levantaba de los ríos y el canto de los pájaros resonaba, el sabio salía a recoger plantas y frutos que solo él conocía.
+
+                                            Las gentes del pueblo cercano se acercaban de vez en cuando, en busca de consejos y remedios para el cuerpo y el alma. Él los recibía con una sonrisa serena, escuchaba sus historias y, tras un breve silencio, les ofrecía respuestas enigmáticas que cada uno interpretaba a su manera. Para algunos, era solo un excéntrico ermitaño; para otros, un guardián de la sabiduría ancestral                                        </p>
+                                    </div>
+                                </div>
+                                <div class="store-img">
+                                    <img class="lazyload"
+                                         src="https://themesflat.co/html/ecomus/images/shop/store/ourstore3.png"
+                                         data-src="https://themesflat.co/html/ecomus/images/shop/store/ourstore3.png" alt="store-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Store -->
+
+        <!-- Blogs post -->
+        <!-- Related Articles flat-spacing-14 mb_30 -->
+        <section class="flat-spacing-1 pt_0">
+            <div class="container">
+                <!--<div class="flat-title">
+                    <h5 class="">Related Articles</h5>
+                </div>-->
+                <div class="flat-title wow fadeInUp" data-wow-delay="0s">
+                    <span class="title">NUESTROS BLOGS</span>
+                </div>
+                <div class="hover-sw-nav view-default hover-sw-5">
+                    <div class="swiper tf-sw-recent" data-preview="3" data-tablet="2" data-mobile="1" data-space-lg="30" data-space-md="30" data-space="15" data-pagination="1" data-pagination-md="1" data-pagination-lg="1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" lazy="true" th:each=" articulo : ${articulos}">
+                                <div class="blog-article-item">
+                                    <div class="article-thumb radius-10">
+                                        <a th:href="@{'/blogs/'+${articulo.url}}">
+                                            <img class="lazyload"
+                                                 th:data-src="'http://104.218.48.244:8080/apirest/api/articulos/images/'+${articulo.imagen}"
+                                                 th:src="'http://104.218.48.244:8080/apirest/api/articulos/images/'+${articulo.imagen}" alt="img-blog">
+                                        </a>
+                                       <!-- <div class="article-label">
+                                            <a th:href="@{'/blogs/'+${articulo.url}}" class="tf-btn style-2 btn-fill radius-3 animate-hover-btn">Shop collection</a>
+                                        </div>-->
+                                    </div>
+                                    <div class="article-content">
+                                        <div class="article-title">
+                                            <a th:href="@{'/blogs/'+${articulo.url}}" th:text="${articulo.titulo}"></a>
+                                        </div>
+                                        <div class="article-btn">
+                                            <a th:href="@{'/blogs/'+${articulo.url}}" class="tf-btn btn-line fw-6">Leer más<i class="icon icon-arrow1-top-left"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-sw nav-next-slider nav-next-recent box-icon w_46 round"><span class="icon icon-arrow-left"></span></div>
+                    <div class="nav-sw nav-prev-slider nav-prev-recent box-icon w_46 round"><span class="icon icon-arrow-right"></span></div>
+                    <div class="sw-dots d-flex style-2 sw-pagination-recent justify-content-center"></div>
+                </div>
+            </div>
+        </section>
+        <!-- /Related Articles -->
+        <!-- /Blogs post -->
+
+        <!-- Footer -->
+        <div th:replace="~{shared/components/footer :: footer}"></div>
+        <!-- /Footer -->
+    </div>
+
+    <!-- gotop: Componente que hace dirigirte a lo más alto de la página web-->
+    <div th:replace="~{shared/components/gotop :: gotop}"></div>
+    <!-- /gotop -->
+
+    <!-- toolbar-bottom: Componente inferior cuando es mobile similar a un toolbar-->
+    <div th:replace="~{shared/components/toolbar-bottom :: toolbar-bottom}"></div>
+    <!-- /toolbar-bottom -->
+
+    <!-- all-modals: Todos los modales -->
+    <div th:replace="~{shared/modals/all-modals :: all-modals}"></div>
+    <!-- /all-modals -->
+
+    <!-- Javascript -->
+    <script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/swiper-bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/carousel.js}"></script>
+    <script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/bootstrap-select.min.js}"></script>
+    <script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/lazysize.min.js}"></script>
+    <script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/count-down.js}"></script>
+    <script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/wow.min.js}"></script>
+    <script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/multiple-modal.js}"></script>
+    <script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/main.js}"></script>
+    <script type="text/javascript" th:src="@{/public/resources/site/general/static/assets/js/carrito.js}"></script>
+
+    <script th:inline="javascript">
+        const formaId = 2;
+
+        let dataUsuario = [[${session.usuario}]]
+        let selectedVariants = [];
+        let producto = "";
+        let variacionesParams;
+        let urlImagenesProductos='http://104.218.48.244:8080/apirest/api/productos/images-propiedad-detalle/';
+
+
+        $(document).ready(function () {
+            mostrarProductosPorForma(formaId);
+        })
+
+        function mostrarProductosPorForma(formaId){
+            $.ajax({
+                type: "GET",
+                url: '/qaweb/producto/obtenerProductoPorForma',
+                dataType: "json",
+                data: { formaId },
+                success: function (response) {
+
+                    const $swiperWrapper = $('#contenedor-productos-bestsellers');
+
+                    $.each(response, function (i, element) {
+
+                        let variacionesParams = element.variaciones.map(function (v, i) {
+                            return 'variacion' + (i + 1) + '=' + encodeURIComponent(v.trim());
+                        }).join('&');
+
+                        let productoCard = $("<div>").addClass("swiper-slide").attr("lazy", "true").append(
+                            $("<div>").addClass("card-product bg_white radius-20").attr({
+                                "data-price": element.precioReducido,
+                                "data-color": "orange black white"
+                            }).append(
+                                $("<div>").addClass("card-product-wrapper border-line").append(
+                                    $("<a>").addClass("product-img product-link").attr({
+                                        "href": "/qaweb/"+element.urlMenu+"/" + element.urlMenuSub+ "/" + element.urlCategoria+"/"+
+                                            element.urlProducto+"?"+variacionesParams,
+                                    }).append(
+                                        $("<img>").addClass("lazyload img-product").attr({
+                                            "data-src": urlImagenesProductos + element.imagen,
+                                            "src": urlImagenesProductos + element.imagen,
+                                            "alt": element.nombre
+                                        }),
+                                        $("<img>").addClass("lazyload img-hover").attr({
+                                            "data-src": urlImagenesProductos + element.imagen,
+                                            "src": urlImagenesProductos + element.imagen,
+                                            "alt": element.nombre
+                                        })
+                                    )
+                                ),
+                                $("<div>").addClass("list-product-btn absolute-2").append(
+                                    $("<a>").attr({"href": "#quick_add", "data-bs-toggle": "modal"}).data("producto", element).addClass("box-icon bg_white quick-add tf-btn-loading btn-show-detail").append(
+                                        $("<span>").addClass("icon icon-bag"),
+                                        $("<span>").addClass("tooltip").text("Agregar rápido")
+                                    ),
+                                    /*$("<a>").attr("href", "javascript:void(0);").addClass("box-icon bg_white wishlist btn-icon-action").append(
+                                        $("<span>").addClass("icon icon-heart"),
+                                        $("<span>").addClass("tooltip").text("Add to Wishlist"),
+                                        $("<span>").addClass("icon icon-delete")
+                                    ),
+                                    $("<a>").addClass("box-icon bg_white compare btn-icon-action btn-add-cart").data("producto", element).append(
+                                        $("<span>").addClass("icon icon-compare"),
+                                        $("<span>").addClass("tooltip").text("Add to Compare"),
+                                        $("<span>").addClass("icon icon-check")
+                                    ),
+                                    $("<a>").attr({"href": "#quick_view", "data-bs-toggle": "modal"}).addClass("box-icon bg_white quickview tf-btn-loading").append(
+                                        $("<span>").addClass("icon icon-view"),
+                                        $("<span>").addClass("tooltip").text("Quick View")
+                                    )*/
+                                ),
+                                $("<div>").addClass("card-product-info").append(
+                                    $("<a>").addClass("title link text-center").text(element.nombreMarca).attr({
+                                        "href": "/por-marcas/" + element.urlMarca
+                                    }),
+                                    $("<a>").addClass("title link text-center").text(element.nombre).attr({
+                                        "href": "/qaweb/"+element.urlMenu+"/" + element.urlMenuSub+ "/" + element.urlCategoria+"/"+
+                                            element.urlProducto+"?"+variacionesParams,
+                                    })
+                                )
+                            )
+                        );
+
+                        $.each(element.variaciones, function (j, variacion) {
+                            productoCard.find(".card-product-info").append(
+                                $("<a>").addClass("title link text-center").text(variacion)
+                            );
+                        });
+
+                        const preciosPorRol = {
+                            "Cliente": { regular: element.precio, especial: element.precioReducido, labelEspecial: "Precio Reducido:" },
+                            "Team": { regular: element.precio, especial: element.precioTeam, labelEspecial: "Precio Team:" },
+                            "Team Vip": { regular: element.precio , especial: element.precioTeamVip, labelEspecial: "Precio VIP Team:" },
+                            "Familiar": { regular: element.precio , especial: element.precioFamiliar, labelEspecial: "Precio Familiar:" }
+                        };
+
+                        // Definir los precios por defecto
+                        const preciosDefecto = { regular: element.precio, especial: element.precioReducido, labelEspecial: "Precio Reducido:" };
+
+                        // Obtener los precios basados en el rol del usuario o usar los precios por defecto si el rol es null
+                        const precio = dataUsuario && dataUsuario.nombreRolPerfil  ? preciosPorRol[dataUsuario.nombreRolPerfil] : preciosDefecto
+
+                        let priceProduct = $("<div>").addClass("d-flex flex-row justify-content-evenly").append(
+                            $("<p>").addClass("d-flex flex-column").append(
+                                $("<span>").text("Precio Regular:"),
+                                $("<span>").addClass("price").text("S/. " + parseFloat(precio.regular).toFixed(2))
+                            ),
+                            $("<p>").addClass("d-flex flex-column").append(
+                                $("<span>").text(precio.labelEspecial),
+                                $("<span>").addClass("price").text("S/. " + parseFloat(precio.especial).toFixed(2))
+                            )
+                        );
+
+                        productoCard.find(".card-product-info").append(priceProduct);
+                        $swiperWrapper.append(productoCard);
+                    });
+                },
+                error: function() {
+                    console.log('Error al obtener productos');
+                }
+            });
+        }
+
+    </script>
+
+
+</body>
+
+</html>
