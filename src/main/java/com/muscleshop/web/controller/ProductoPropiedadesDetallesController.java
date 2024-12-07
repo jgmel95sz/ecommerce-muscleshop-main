@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("/productoPropiedadesDetalles/")
+@RequestMapping("/qaweb/productoPropiedadesDetalles/")
 public class ProductoPropiedadesDetallesController {
 
     @Autowired

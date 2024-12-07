@@ -172,7 +172,7 @@ public class Security {
     private ClientRegistration googleClientRegistration() {
         return CommonOAuth2Provider.GOOGLE.getBuilder("google")
                .clientId(clientId)
-               //.clientSecret(clientSecret)
+               .clientSecret(clientSecret)
                 .scope("openid", "profile", "email")
                 .redirectUri("http://localhost:8080/login/oauth2/code/google")
                 .build();

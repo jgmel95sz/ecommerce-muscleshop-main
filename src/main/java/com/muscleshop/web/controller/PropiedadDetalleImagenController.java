@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/propiedadDetalleImagen/")
+@RequestMapping("/qaweb/propiedadDetalleImagen/")
 public class PropiedadDetalleImagenController {
     @Autowired
     private IPropiedadDetalleImagenService iPropiedadDetalleImagenService;

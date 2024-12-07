@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/producto/")
+@RequestMapping("/qaweb/producto/")
 public class ProductoController {
     @Autowired
     private IProductoService iProductoService;

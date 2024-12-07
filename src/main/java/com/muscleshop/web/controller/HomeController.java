@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/qaweb/")
 public class HomeController {
 
 	@Autowired

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
-@RequestMapping("/pedidos/")
+@RequestMapping("/qaweb/pedidos/")
 public class PedidosController {
 
     @Autowired
